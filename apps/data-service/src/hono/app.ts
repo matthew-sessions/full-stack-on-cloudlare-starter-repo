@@ -3,10 +3,12 @@ import { cloudflareInfoSchema } from '@repo/data-ops/zod-schema/links';
 import { LinkClickMessageType } from '@repo/data-ops/zod-schema/queue';
 
 import { Hono } from 'hono';
-
-
+import { cors } from 'hono/cors';
 
 export const App = new Hono<{ Bindings: Env }>();
+
+App.use('*', cors());
+
 
 App.get('/click-socket', async (c) => {
   const upgradeHeader = c.req.header('Upgrade');
@@ -15,6 +17,7 @@ App.get('/click-socket', async (c) => {
 	}
 
   const accountId = c.req.header('account-id')
+
   if (!accountId) return  c.text('No Headers', 404);
   const doId = c.env.LINK_CLICK_TRACKER_OBJECT.idFromName(accountId);
 	const stub = c.env.LINK_CLICK_TRACKER_OBJECT.get(doId);

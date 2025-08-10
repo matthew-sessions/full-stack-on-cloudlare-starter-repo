@@ -15,7 +15,7 @@ export default defineConfig({
     cloudflare({
       experimental: {
         remoteBindings: true
-      }
+      },
     }),
   ],
   server: {

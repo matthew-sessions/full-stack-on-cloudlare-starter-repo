@@ -6,7 +6,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "user-application",
   "main": "worker/index.ts",
-  "compatibility_date": "2025-07-11",
+  "compatibility_date": "2025-06-17",
   "assets": {
     "binding": "ASSETS",
     "not_found_handling": "single-page-application",
@@ -14,11 +14,22 @@
   "observability": {
     "enabled": true,
   },
-  "d1_databases": [
-    {
-      "binding": "DB",
-      "database_id": "65409933-f910-4bab-8c45-469b94f2eb90",
-      "experimental_remote": true
+  "env": {
+    "stage": {
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_id": "65409933-f910-4bab-8c45-469b94f2eb90",
+          "experimental_remote": true,
+        },
+      ],
+      "services": [
+        {
+          "binding": "BACKEND_SERVICE",
+          "service": "data-service-stage",
+          "experimental_remote": true,
+        },
+      ]
     }
-  ]
+  }
 }

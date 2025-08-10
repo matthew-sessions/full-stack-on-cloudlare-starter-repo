@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "npm run dev"
+    "build-package": "pnpm --filter @repo/data-ops run build",
+    "dev-frontend": "pnpm --filter user-application run dev",
+    "dev-data-service": "pnpm --filter data-service run dev"
   },
   "keywords": [],
   "author": "",

@@ -12,6 +12,7 @@ export default class DataService extends WorkerEntrypoint<Env> {
 		super(ctx, env)
 		initDatabase(env.DB)
 	}
+
 	fetch(request: Request) {
 		return App.fetch(request, this.env, this.ctx)
 	}
