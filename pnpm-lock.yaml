@@ -273,7 +273,7 @@ importers:
         version: 12.2.0
       drizzle-orm:
         specifier: ^0.44.2
-        version: 0.44.2(@cloudflare/workers-types@4.20250628.0)(@opentelemetry/api@1.9.0)(@planetscale/database@1.19.0)(better-sqlite3@12.2.0)(kysely@0.28.2)
+        version: 0.44.2(@cloudflare/workers-types@4.20250628.0)(@opentelemetry/api@1.9.0)(@planetscale/database@1.19.0)(@types/better-sqlite3@7.6.13)(better-sqlite3@12.2.0)(kysely@0.28.2)
       kysely:
         specifier: ^0.28.2
         version: 0.28.2
@@ -293,6 +293,9 @@ importers:
       '@cloudflare/workers-types':
         specifier: ^4.20250405.0
         version: 4.20250628.0
+      '@types/better-sqlite3':
+        specifier: ^7.6.13
+        version: 7.6.13
       '@types/node':
         specifier: ^22.15.19
         version: 22.15.33
@@ -2233,6 +2236,9 @@ packages:
 
   '@types/babel__traverse@7.20.7':
     resolution: {integrity: sha512-dkO5fhS7+/oos4ciWxyEyjWe48zmG6wbCheo/G2ZnHx4fs3EU6YC6UM8rk56gAjNJ9P3MTH2jo5jb92/K6wbng==}
+
+  '@types/better-sqlite3@7.6.13':
+    resolution: {integrity: sha512-NMv9ASNARoKksWtsq/SHakpYAYnhBrQgGD8zkLYk/jaK8jUGn08CfEdTRgYhMypUQAfzSP8W6gNLe0q19/t4VA==}
 
   '@types/chai@5.2.2':
     resolution: {integrity: sha512-8kB30R7Hwqf40JPiKhVzodJs2Qc1ZJ5zuT3uzw5Hq/dhNCl3G3l83jfpdI1e20BP348+fV7VIL/+FxaXkqBmWg==}
@@ -5997,6 +6003,10 @@ snapshots:
     dependencies:
       '@babel/types': 7.27.7
 
+  '@types/better-sqlite3@7.6.13':
+    dependencies:
+      '@types/node': 22.15.33
+
   '@types/chai@5.2.2':
     dependencies:
       '@types/deep-eql': 4.0.2
@@ -6484,11 +6494,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.44.2(@cloudflare/workers-types@4.20250628.0)(@opentelemetry/api@1.9.0)(@planetscale/database@1.19.0)(better-sqlite3@12.2.0)(kysely@0.28.2):
+  drizzle-orm@0.44.2(@cloudflare/workers-types@4.20250628.0)(@opentelemetry/api@1.9.0)(@planetscale/database@1.19.0)(@types/better-sqlite3@7.6.13)(better-sqlite3@12.2.0)(kysely@0.28.2):
     optionalDependencies:
       '@cloudflare/workers-types': 4.20250628.0
       '@opentelemetry/api': 1.9.0
       '@planetscale/database': 1.19.0
+      '@types/better-sqlite3': 7.6.13
       better-sqlite3: 12.2.0
       kysely: 0.28.2
 
