@@ -70,7 +70,7 @@
     "zustand": "^5.0.6"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "^1.9.5",
+    "@cloudflare/vite-plugin": "^1.11.2",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.3.0",
     "@types/react": "^19.1.8",
@@ -84,6 +84,5 @@
     "vitest": "^3.2.4",
     "web-vitals": "^4.2.4",
     "wrangler": "^4.28.1"
-
   }
 }
