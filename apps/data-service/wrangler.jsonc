@@ -13,6 +13,12 @@
 	},
 	"env": {
 		"stage": {
+			"routes": [
+				{
+					"zone_name": "smrtlk.com",
+					"pattern": "stage.smrtlk.com/r/*"
+				}
+			],
 			"browser": {
 				"binding": "VIRTUAL_BROWSER",
 			},
@@ -93,6 +99,12 @@
 			]
 		},
 		"production": {
+			"routes": [
+				{
+					"zone_name": "smrtlk.com",
+					"pattern": "smrtlk.com/r/*"
+				}
+			],
 			"browser": {
 				"binding": "VIRTUAL_BROWSER",
 			},

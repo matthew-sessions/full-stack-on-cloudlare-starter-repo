@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite --port 3000 --mode development",
     "start": "vite --port 3000",
-    "build": "vite build && tsc",
+    "build": "vite build --mode development && tsc",
     "production:build": "vite build --mode production && tsc",
     "serve": "vite preview",
     "test": "vitest run",
