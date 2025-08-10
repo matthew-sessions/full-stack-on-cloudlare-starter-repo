@@ -16,6 +16,12 @@
   },
   "env": {
     "stage": {
+      "routes": [
+        {
+          "custom_domain": true,
+          "pattern": "stage.smrtlk.com"
+        }
+      ],
       "d1_databases": [
         {
           "binding": "DB",
@@ -29,9 +35,15 @@
           "service": "data-service-stage",
           "experimental_remote": true,
         },
-      ]
+      ],
     },
     "production": {
+      "routes": [
+        {
+          "custom_domain": true,
+          "pattern": "smrtlk.com"
+        }
+      ],
       "d1_databases": [
         {
           "binding": "DB",
@@ -45,7 +57,7 @@
           "service": "data-service-production",
           "experimental_remote": true,
         },
-      ]
-    }
-  }
+      ],
+    },
+  },
 }
