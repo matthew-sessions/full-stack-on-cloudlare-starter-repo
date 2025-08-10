@@ -2,6 +2,7 @@ import { Hono } from "hono";
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 import { appRouter } from "@/worker/trpc/router";
 import { createContext } from "@/worker/trpc/context";
+import { getAuth } from "@repo/data-ops/auth"
 
 export const App = new Hono<{ Bindings: ServiceBindings }>();
 
@@ -21,3 +22,12 @@ App.get("/click-socket", async (c) => {
   const proxiedRequest = new Request(c.req.raw, { headers });
   return c.env.BACKEND_SERVICE.fetch(proxiedRequest);
 });
+
+App.on(["POST", "GET"], "/api/auth/*", (c) => {
+  const auth = getAuth({
+    clientId: c.env.GOOGLE_CLIENT_ID,
+    clientSecret: c.env.GOOGLE_CLIENT_SECRET
+  })
+	return auth.handler(c.req.raw);
+});
+ 
