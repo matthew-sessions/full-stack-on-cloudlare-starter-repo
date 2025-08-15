@@ -18,8 +18,7 @@ const getAuthInstance = (env: Env) => {
       clientSecret: env.GOOGLE_CLIENT_SECRET,
     },
     {
-      stripeWebhookSecret:
-        "whsec_e76d8a880db871b3e1cbe4bc345d5d48ec34bc5d8a0a61cbbae454a043b1e742",
+      stripeWebhookSecret: "",
 
       plans: [
         {
