@@ -2,17 +2,19 @@ export async function createContext({
   req,
   env,
   workerCtx,
+  userId
 }: {
   req: Request;
   env: ServiceBindings;
   workerCtx: ExecutionContext;
+  userId: string
 }) {
   return {
     req,
     env,
     workerCtx,
     userInfo: {
-      userId: "1234567890",
+      userId: userId,
     },
   };
 }

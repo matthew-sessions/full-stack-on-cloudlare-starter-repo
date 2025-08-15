@@ -10,7 +10,7 @@ let auth: ReturnType<typeof betterAuth>;
 export function createBetterAuth(
     database: NonNullable<Parameters<typeof betterAuth>[0]>["database"],
     google?: { clientId: string; clientSecret: string },
-  ) {
+  ): ReturnType<typeof betterAuth> {
     return betterAuth({
       database,
       emailAndPassword: {
@@ -26,7 +26,7 @@ export function createBetterAuth(
   }
 
 
-export function getAuth(google: { clientId: string; clientSecret: string }) {
+export function getAuth(google: { clientId: string; clientSecret: string }): ReturnType<typeof betterAuth> {
     if (auth) return auth;
   
     auth = createBetterAuth(
