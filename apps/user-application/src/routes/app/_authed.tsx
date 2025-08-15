@@ -9,11 +9,11 @@ export const Route = createFileRoute("/app/_authed")({
   component: RouteComponent,
   beforeLoad: async () => {
     const session = await authClient.getSession();
+    console.log(session);
     if (!session.data?.session) {
-      throw redirect({to: "/"})
+      throw redirect({ to: "/" });
     }
-  }
-
+  },
 });
 
 function RouteComponent() {

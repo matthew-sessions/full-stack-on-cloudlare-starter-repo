@@ -7,10 +7,11 @@
   "name": "user-application",
   "main": "worker/index.ts",
   "compatibility_date": "2025-06-17",
+  "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "binding": "ASSETS",
     "not_found_handling": "single-page-application",
-    "run_worker_first": ["/api/auth/*", "/trpc/*", "/click-socket"]
+    "run_worker_first": ["/api/auth/*", "/trpc/*", "/click-socket"],
   },
   "observability": {
     "enabled": true,
@@ -20,8 +21,8 @@
       "routes": [
         {
           "custom_domain": true,
-          "pattern": "stage.smrtlk.com"
-        }
+          "pattern": "stage.smrtlk.com",
+        },
       ],
       "d1_databases": [
         {
@@ -42,8 +43,8 @@
       "routes": [
         {
           "custom_domain": true,
-          "pattern": "smrtlk.com"
-        }
+          "pattern": "smrtlk.com",
+        },
       ],
       "d1_databases": [
         {
