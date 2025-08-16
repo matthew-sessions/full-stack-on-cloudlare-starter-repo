@@ -18,6 +18,13 @@
   },
   "env": {
     "stage": {
+      "vars": {
+        "STRIPE_PRODUCT_BASIC": "price_1RwXlNHpob3EHbKhMjiWZEfa",
+        "STRIPE_PRODUCT_PRO": "price_1RwXmNHpob3EHbKhYXQMxvSn",
+        "STRIPE_PRODUCT_ENTERPRISE": "price_1RwXn3Hpob3EHbKht3rxzXKE",
+        "GOOGLE_CLIENT_ID": "497355098387-e2v8702a0g0s8l2otchlqi88klt3d0gh.apps.googleusercontent.com"
+
+      },
       "routes": [
         {
           "custom_domain": true,

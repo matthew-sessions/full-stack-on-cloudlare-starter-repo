@@ -1,7 +1,7 @@
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { getDb } from "./db/database";
-import { account, session, user, verification } from "./drizzle-out/auth-schema";
+import { account, session, subscription, user, verification } from "./drizzle-out/auth-schema";
 import { stripe } from "@better-auth/stripe";
 import Stripe from "stripe";
 
@@ -18,11 +18,13 @@ type StripeConfig = {
 
 export function createBetterAuth(
     database: NonNullable<Parameters<typeof betterAuth>[0]>["database"],
+    secret: string,
     stripeConfig?: StripeConfig,
     google?: { clientId: string; clientSecret: string },
   ): ReturnType<typeof betterAuth> {
     return betterAuth({
       database,
+      secret: secret,
       emailAndPassword: {
         enabled: false,
       },
@@ -57,6 +59,7 @@ export function createBetterAuth(
 export function getAuth(
   google: { clientId: string; clientSecret: string },
   stripe: StripeConfig,
+  secret: string
 
 ): ReturnType<typeof betterAuth> {
     if (auth) return auth;
@@ -68,11 +71,14 @@ export function getAuth(
           user,
           session,
           account,
-          verification
+          verification,
+          subscription
         }
       }),
+      secret,
       stripe,
       google,
+      
     );
     return auth;
 }

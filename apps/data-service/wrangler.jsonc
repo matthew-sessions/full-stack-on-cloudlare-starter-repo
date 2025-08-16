@@ -16,7 +16,7 @@
 			"routes": [
 				{
 					"zone_name": "smrtlk.com",
-					"pattern": "stage.smrtlk.com/r/*"
+					"pattern": "go-stage.smrtlk.com/*"
 				}
 			],
 			"browser": {
