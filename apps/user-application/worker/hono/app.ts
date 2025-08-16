@@ -9,10 +9,30 @@ import { createMiddleware } from "hono/factory";
 export const App = new Hono<{ Bindings: ServiceBindings, Variables: { userId: string } }>();
 
 const getAuthInstance = (env: Env) => {
-  return getAuth({
-    clientId: env.GOOGLE_CLIENT_ID,
-    clientSecret: env.GOOGLE_CLIENT_SECRET
-  })
+  return getAuth(
+    {
+      clientId: env.GOOGLE_CLIENT_ID,
+      clientSecret: env.GOOGLE_CLIENT_SECRET
+    },
+    {
+      stripeWebhookSecret: "",
+      stripeApiKey: env.STRIPE_SECRET_KEY,
+      plans: [
+        {
+          name: "basic",
+          priceId: env.STRIPE_PRODUCT_BASIC
+        },
+        {
+          name: "pro",
+          priceId: env.STRIPE_PRODUCT_PRO
+        },
+        {
+          name: "enterprise",
+          priceId: env.STRIPE_PRODUCT_ENTERPRISE
+        }
+      ]
+    }
+  )
 }
 
 const authMiddleware = createMiddleware(async (c, next) => {

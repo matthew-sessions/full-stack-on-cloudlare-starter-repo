@@ -11,16 +11,9 @@ let auth: ReturnType<typeof betterAuth>;
 type StripeConfig = {
   stripeWebhookSecret: string;
   plans: any[];
-  stripeClient?: Stripe
+  stripeApiKey?: string
 };
 
-
-const stripeClient = new Stripe(
-  process.env.STRIPE_KEY!,
-  {
-    apiVersion: "2025-07-30.basil",
-  },
-);
 
 
 export function createBetterAuth(
@@ -41,7 +34,12 @@ export function createBetterAuth(
       },
       plugins: [
         stripe({
-          stripeClient: stripeConfig?.stripeClient ?? stripeClient,
+          stripeClient: new Stripe(
+            stripeConfig?.stripeApiKey || process.env.STRIPE_KEY!,
+            {
+              apiVersion: "2025-07-30.basil",
+            },
+          ),
           stripeWebhookSecret:
           stripeConfig?.stripeWebhookSecret ??
           process.env.STRIPE_WEBHOOK_SECRET!,
