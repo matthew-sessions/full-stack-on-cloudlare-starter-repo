@@ -12,11 +12,7 @@ export default defineConfig({
     tanstackRouter({ autoCodeSplitting: true }),
     viteReact(),
     tailwindcss(),
-    cloudflare({
-      experimental: {
-        remoteBindings: true
-      },
-    }),
+    cloudflare(),
   ],
   server: {
     watch: {
