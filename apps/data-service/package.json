@@ -5,26 +5,26 @@
 	"scripts": {
 		"stage:deploy": "wrangler deploy --env stage",
 		"production:deploy": "wrangler deploy --env production",
-		"dev": "wrangler dev --x-remote-bindings",
+		"dev": "wrangler dev",
 		"start": "wrangler dev",
 		"test": "vitest",
 		"cf-typegen": "wrangler types --env-interface BaseEnv --env stage"
 	},
 	"devDependencies": {
-		"@cloudflare/puppeteer": "^1.0.3",
-		"@cloudflare/vitest-pool-workers": "^0.8.19",
-		"@types/node": "^22.15.19",
-		"typescript": "^5.5.2",
-		"vitest": "~3.2.0",
-		"wrangler": "^4.42.2"
+		"@cloudflare/puppeteer": "^1.0.4",
+		"@cloudflare/vitest-pool-workers": "^0.8.71",
+		"@types/node": "^22.19.2",
+		"typescript": "^5.9.3",
+		"vitest": "~3.2.4",
+		"wrangler": "^4.53.0"
 	},
 	"dependencies": {
 		"@repo/data-ops": "workspace:*",
-		"ai": "^5.0.68",
-		"hono": "^4.8.3",
+		"ai": "^5.0.110",
+		"hono": "^4.10.8",
 		"moment": "^2.30.1",
 		"uuid": "^11.1.0",
 		"workers-ai-provider": "^2.0.0",
-		"zod": "^3.25.67"
+		"zod": "^3.25.76"
 	}
 }
